@@ -84,5 +84,23 @@ void printPoli(TPoly p) {
     for(int i = 0; i < N; i++) {
         float co = p[i].coef;
         float deg = p[i].deg;
+        bool isC = (deg == 0);
+        if(co != 0) {
+            if(i == 0) {
+                if(isC) {
+                    cout << co;
+                } else {
+                    cout << co << "x^" << deg;
+                }
+            } else {
+                cout << " + ";
+                if(isC) {
+                    cout << co;
+                } else {
+                    cout << co << "x^" << deg;
+                }
+            }
+        }
     }
+    cout << endl;
 }
